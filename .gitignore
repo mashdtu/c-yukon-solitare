@@ -1,0 +1,13 @@
+todo.md
+/terminal-interface-version
+*.o
+*.out
+*.exe
+*.class
+*.so
+*.dll
+*.a
+*.pyc
+*.pyo
+*.swp
+test_deck.c
