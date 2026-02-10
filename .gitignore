@@ -10,4 +10,4 @@ todo.md
 *.pyc
 *.pyo
 *.swp
-test_deck.c
+test/test_deck.c
