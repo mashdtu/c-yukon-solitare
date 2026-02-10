@@ -1,9 +1,9 @@
-#include "cards.h"
-#include "board.h"
-#include "pile.h"
-#include "win.h"
-#include "rules.h"
-#include "constants.h"
+#include "../cards.h"
+#include "../board.h"
+#include "../pile.h"
+#include "../win.h"
+#include "../rules.h"
+#include "../constants.h"
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -38,6 +38,36 @@ bool test_move_group_sequence_and_color_only()
     place_cards_on_tableau(board, 0);
     // Should succeed: Black 4, Red 3, 7 of Spades, 2 of Diamonds
     bool result = (board->tableaus[0].top == 3 && board->tableaus[0].cards[0].rank == 4 && board->tableaus[0].cards[1].rank == 3);
+    free_board(board);
+    return result;
+}
+
+// Test 11: Move sequence starting with King to empty tableau
+bool test_move_king_sequence_to_empty_tableau()
+{
+    Board *board = create_board();
+    // Tableau 0: empty
+    board->tableaus[0].top = -1;
+    // Tableau 1: King, Queen, Jack (all face up, alternating colors)
+    board->tableaus[1].top = 2;
+    board->tableaus[1].cards[0].rank = 13; // King
+    board->tableaus[1].cards[0].suit = HEARTS;
+    board->tableaus[1].cards[0].is_face_down = false;
+    board->tableaus[1].cards[1].rank = 12; // Queen
+    board->tableaus[1].cards[1].suit = CLUBS;
+    board->tableaus[1].cards[1].is_face_down = false;
+    board->tableaus[1].cards[2].rank = 11; // Jack
+    board->tableaus[1].cards[2].suit = DIAMONDS;
+    board->tableaus[1].cards[2].is_face_down = false;
+    // Pick up all 3 cards from tableau 1
+    pick_up_cards(board, 1, 3);
+    // Move group onto empty tableau 0
+    place_cards_on_tableau(board, 0);
+    // Should succeed: tableau 0 now has King, Queen, Jack in order
+    bool result = (board->tableaus[0].top == 2 &&
+                   board->tableaus[0].cards[0].rank == 13 &&
+                   board->tableaus[0].cards[1].rank == 12 &&
+                   board->tableaus[0].cards[2].rank == 11);
     free_board(board);
     return result;
 }
@@ -221,5 +251,6 @@ int main()
     run_test("Test8: Move card to foundation with correct suit and rank", test_move_to_foundation_correct_suit_and_rank);
     run_test("Test9: Automatically turn face-down card after moving all face-up cards", test_auto_turn_facedown_card);
     run_test("Test10: Move group with only starting and target cards in sequence and alternate color", test_move_group_sequence_and_color_only);
+    run_test("Test11: Move sequence starting with King to empty tableau", test_move_king_sequence_to_empty_tableau);
     return 0;
 }
