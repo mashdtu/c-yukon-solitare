@@ -1,7 +1,7 @@
 ## Yukon Solitaire (C Implementation)
 
 This is Yukon Solitaire implemented in C.  
-The UI is not implemented yet, but you can try out the game logic by compiling and running `test_game.c`, which lets you try it out in the terminal.
+The UI is not implemented yet, but you can try out the game by compiling and running `test_game.c`, which lets you try it out in the terminal.
 
 ---
 
