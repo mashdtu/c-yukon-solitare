@@ -3,6 +3,8 @@
 #include "../cards.h"
 #include "../pile.h"
 #include "../win.h"
+#include "../rules.h"
+#include "../constants.h"
 #include <stdio.h>
 #include <string.h>
 

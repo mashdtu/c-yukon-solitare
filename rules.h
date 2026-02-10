@@ -1,28 +1,15 @@
 #ifndef RULES_H
 #define RULES_H
 
-// Only macro definitions for magic numbers
-#define NUM_SUITS 4
-#define FOUNDATION_SIZE 13
-#define NUM_TABLEAUS 7
-#define TABLEAU_MAX_SIZE 52
-#define DECK_SIZE 52
-
-#endif // RULES_H
-#ifndef RULES_H
-#define RULES_H
+#include <stdbool.h>
+#include "cards.h"
 
 /**
  * @file rules.h
- * Defines the constants for the game rules,
- * such as the number of suits, foundation size,
- * tableau size, and deck size.
+ * Defines the functions for validating moves according to the game rules.
  */
 
-#define NUM_SUITS 4
-#define FOUNDATION_SIZE 13
-#define NUM_TABLEAUS 7
-#define TABLEAU_MAX_SIZE 52
-#define DECK_SIZE 52
+bool can_place_on_tableau(Card card, Card top_card);
+bool can_place_on_foundation(Card card, Card top_card, Suit foundation_suit);
 
 #endif // RULES_H

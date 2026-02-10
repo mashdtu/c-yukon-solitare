@@ -1,7 +1,9 @@
-#include <stdbool.h>
+#include "cards.h"
 #include "board.h"
 #include "pile.h"
 #include "win.h"
+#include "rules.h"
+#include "constants.h"
 #include <stdio.h>
 #include <stdbool.h>
 

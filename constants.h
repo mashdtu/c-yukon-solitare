@@ -1,0 +1,10 @@
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
+
+#define NUM_SUITS 4
+#define FOUNDATION_SIZE 13
+#define NUM_TABLEAUS 7
+#define TABLEAU_MAX_SIZE 52
+#define DECK_SIZE 52
+
+#endif // CONSTANTS_H

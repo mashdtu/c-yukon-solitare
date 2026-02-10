@@ -1,5 +1,4 @@
 #include "cards.h"
-#include <stdbool.h>
 /**
  * @file cards.c
  * Implements functions for managing cards.
@@ -53,4 +52,29 @@ bool get_card_color(Card card)
     {
         return false; // Black
     }
+}
+
+/**
+ * Returns the next card in sequence based on the current card's rank and suit.
+ * If the current card is a King (rank 13), returns a null card (rank 0, suit 0).
+ */
+Card get_next_card(Card card)
+{
+    // Define a variable to hold the next card
+    Card next_card;
+
+    // If the current card's rank is less than 13, increment the rank to get the next card
+    if (card.rank < 13)
+    {
+        next_card.rank = card.rank + 1;
+        next_card.suit = card.suit;
+    }
+    // If the current card is a King (rank 13), there is no next card, so return a null card
+    else
+    {
+        next_card.rank = 0;
+        next_card.suit = 0;
+    }
+
+    return next_card;
 }

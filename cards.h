@@ -1,9 +1,7 @@
-#include <stdbool.h>
-
 #ifndef CARDS_H
 #define CARDS_H
 
-#include "rules.h"
+#include "constants.h"
 #include <stdbool.h>
 
 /**
@@ -56,5 +54,6 @@ bool is_valid_card(Card card);
 bool compare_cards(Card card1, Card card2);
 bool is_lower_rank(Card card1, Card card2);
 bool get_card_color(Card card);
+Card get_next_card(Card card);
 
 #endif // CARDS_H

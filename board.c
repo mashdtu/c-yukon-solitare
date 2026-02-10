@@ -1,6 +1,7 @@
 #include "board.h"
 #include "deck.h"
 #include "rules.h"
+#include "constants.h"
 #include "pile.h"
 #include <stddef.h>
 #include <stdio.h>
