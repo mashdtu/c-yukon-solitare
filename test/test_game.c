@@ -1,4 +1,3 @@
-
 #include "../board.h"
 #include "../cards.h"
 #include "../pile.h"
