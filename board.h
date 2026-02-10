@@ -1,30 +1,38 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef BOARD_H
+#define BOARD_H
 
 #include "constants.h"
 #include "rules.h"
 #include "cards.h"
 /**
  * @file board.h
- * Defines the structure for the game board and hand.
+ * Defines the structures for representing the game board and hand,
+ * as well as the functions for creating, initializing, and freeing the board.
  */
 
+/**
+ * Represents the player's hand when moving cards.
+ */
 typedef struct
 {
     Card cards[TABLEAU_MAX_SIZE];
-    int size;            // Number of cards currently in hand
-    int origin_tableau;  // Index of the tableau where the hand came from
-    int origin_position; // Starting position in the tableau
+    int size;            // Represents the number of cards currently in hand
+    int origin_tableau;  // Represents the index of the tableau where the hand came from
+    int origin_position; // Represents the starting position in the tableau
 } Hand;
 
+/**
+ * Represents the game board,
+ * which consists of foundations, tableaus, and the player's hand.
+ */
 typedef struct
 {
     Foundation foundations[NUM_SUITS];
     Tableau tableaus[NUM_TABLEAUS];
-    Hand hand; // For managing the cards that are currently being moved.
+    Hand hand; // Hand holds the cards that are currently being moved.
 } Board;
 
 Board *create_board();
 void initialize_board(Board *board);
 void free_board(Board *board);
-#endif // GAME_H
+#endif // BOARD_H

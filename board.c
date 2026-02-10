@@ -22,7 +22,7 @@ Board *create_board()
     Board *board = malloc(sizeof(Board));
     if (board == NULL)
     {
-        // If memory allocation fails, print an error and exit
+        // If memory allocation fails print an error and exit
         fprintf(stderr, "Error: Unable to allocate memory for game board.\n");
         exit(EXIT_FAILURE);
     }
@@ -58,18 +58,11 @@ void free_board(Board *board)
  */
 void initialize_board(Board *board)
 {
-    // Generate deck of cards and shuffle it
+    // Initialize deck of cards
     Card *deck = create_deck();
+    // Shuffle the deck before dealing cards to the tableaus
     shuffle_deck(deck);
-    /**
-     * Distribute the cards to the tableaus with draw_card(),
-     * setting the appropriate cards to face down.
-     *
-     * The first tableau gets one face-up card,
-     * followed by the second tableau with one face-down card and five face-up cards,
-     * followed by the third tableau with two face-down cards and five face-up cards,
-     * and so on until the seventh tableau with six face-down cards and five face-up cards.
-     * */
+    // Populate the tableaus with cards from the deck according to the rules
     int deck_index = 0;
     for (int i = 0; i < NUM_TABLEAUS; i++)
     {
@@ -89,6 +82,6 @@ void initialize_board(Board *board)
             board->tableaus[i].cards[++board->tableaus[i].top] = card;
         }
     }
-    // Free the deck after initializing the board
+    // Free the deck after initializing the board (no longer needed)
     free_deck(deck);
 }

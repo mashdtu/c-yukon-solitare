@@ -6,3 +6,5 @@
  * Working as the controller in the MVC architecture,
  * it manages the game flow and user interactions.
  */
+
+// Hasn't been implemented as there is no UI yet.

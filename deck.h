@@ -8,8 +8,8 @@
  * Declares functions for managing the deck of cards.
  */
 
-Card *create_deck();
 void shuffle_deck(Card *deck);
+Card *create_deck();
 void free_deck(Card *deck);
 
 #endif // DECK_H
