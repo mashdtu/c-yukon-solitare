@@ -4,8 +4,8 @@
 #include "rules.h"
 #include "cards.h"
 /**
- * @file game.h
- * Defines the structure for the game board, which includes foundations and tableaus.
+ * @file board.h
+ * Defines the structure for the game board and hand.
  */
 
 typedef struct
@@ -26,9 +26,4 @@ typedef struct
 Board *create_board();
 void initialize_board(Board *board);
 void free_board(Board *board);
-void pick_up_cards(Board *board, int tableau_index, int num_cards);
-void place_cards_on_tableau(Board *board, int tableau_index);
-void place_card_on_foundation(Board *board, int foundation_index);
-bool check_win_condition(Board *board);
-void pick_up_cards(Board *board, int tableau_index, int num_cards);
 #endif // GAME_H

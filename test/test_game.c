@@ -1,5 +1,8 @@
 
-#include "../game.h"
+#include "../board.h"
+#include "../cards.h"
+#include "../pile.h"
+#include "../win.h"
 #include <stdio.h>
 #include <string.h>
 

@@ -1,5 +1,7 @@
 #include <stdbool.h>
-#include "game.h"
+#include "board.h"
+#include "pile.h"
+#include "win.h"
 #include <stdio.h>
 #include <stdbool.h>
 
