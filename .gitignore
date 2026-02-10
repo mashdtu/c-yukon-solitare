@@ -10,5 +10,4 @@ todo.md
 *.pyc
 *.pyo
 *.swp
-test/test_deck.c
 .DS_Store
