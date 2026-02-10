@@ -11,3 +11,4 @@ todo.md
 *.pyo
 *.swp
 test/test_deck.c
+.DS_Store
