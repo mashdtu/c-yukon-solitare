@@ -1,7 +1,7 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include "constants.h"
+#include <stdint.h>
 #include "rules.h"
 #include "cards.h"
 /**
@@ -16,9 +16,9 @@
 typedef struct
 {
     Card cards[TABLEAU_MAX_SIZE];
-    int size;            // Represents the number of cards currently in hand
-    int origin_tableau;  // Represents the index of the tableau where the hand came from
-    int origin_position; // Represents the starting position in the tableau
+    uint8_t size;               // Represents the number of cards currently in hand
+    int8_t origin_tableau;      // Represents the index of the tableau where the hand came from
+    int8_t origin_position;     // Represents the starting position in the tableau
 } Hand;
 
 /**
