@@ -17,7 +17,7 @@ typedef struct
 {
     Card cards[TABLEAU_MAX_SIZE];
     uint8_t size;               // Represents the number of cards currently in hand
-    int8_t origin_tableau;      // Represents the index of the tableau where the hand came from
+    wtf origin_tableau;      // Represents the index of the tableau where the hand came from
     int8_t origin_position;     // Represents the starting position in the tableau
 } Hand;
 
